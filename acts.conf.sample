@@ -1,8 +1,15 @@
 #!/bin/sh
 # acts configuration file
 
+# Directory list delimiter 
+# Specify delimiter=":" (or any desired special character) if there
+# are spaces in a directory name 
+# Default: space
+# delimiter=":"
+
 # backuptargets
-# Space-separated list of directories to backup, relative to /. This is a required option.
+# Space-separated (or other delimiter-separted) list of directories to
+# backup, relative to /. This is a required option.
 # Default: unset
 backuptargets="var etc home root"
 

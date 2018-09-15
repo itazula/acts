@@ -80,6 +80,7 @@ fi
 verbose="${verbose=0}"
 hostname="${hostname=$(hostname -s)}"
 uselocaltime="${uselocaltime=0}"
+delimiter="${delimiter=" "}"
 backuptargets="${backuptargets=}"
 prebackupscript="${prebackupscript=}"
 postbackupscript="${postbackupscript=}"
@@ -158,6 +159,7 @@ fi
 
 # PART 3: Backup
 backuprc=0 # Notice any failed backups
+IFS="$delimiter"
 for dir in $backuptargets; do
     archive_starttime=$(date +%s)
     nicedirname=$(echo "$dir" | tr -d '/')
@@ -226,6 +228,7 @@ trap - INT TERM EXIT
 rm -f "$lockfile/pid"
 rmdir "$lockfile"
 
+unset IFS
 endtime=$(date +%s)
 log_verbose "acts-finished duration=$((endtime - starttime))s action=exiting"
 exit 0
