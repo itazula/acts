@@ -1,13 +1,13 @@
 #!/bin/sh
 # acts configuration file
 
-# Directory list delimiter 
+# Directory list delimiter
 # Do not set this variable unless there are spaces in the path name of any
 # directory which you wish to backup.
 # If necessary, specify delimiter=":" (or any desired special character that
 # is not in the allowed set of characters for directory/file names for the
-# operating system being used.) 
-# Default: space 
+# operating system being used.)
+# Default: space
 # delimiter=":"
 
 # backuptargets
